@@ -1,0 +1,20 @@
+Digest: sha256:202c9f72ee59c814e7e59c876743bdc5375b0f11c9b8ea5ad382ed032b73043f
+Status: Downloaded newer image for wordpress:latest
+Creating srcs_wordpress_1 ... error
+Creating srcs_nginx_1     ... 
+Creating srcs_mariadb_1   ... 
+
+ERROR: for srcs_wordpress_1  Cannot create container for service wordpress: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda09e530096b7452766d0684007c2cc106d44f166d2627c611fa6:usr/share/wordpress/html:rw': invalid mount config for type "bind": invalid mount path: 'usr/share/wordpress/html' mount
+Creating srcs_mariadb_1   ... error
+
+ERROR: for srcs_mariadb_1  Cannot create container for service mariadb: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda
+Creating srcs_nginx_1     ... errorst be absolute
+
+ERROR: for srcs_nginx_1  Cannot create container for service nginx: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda09e530096b7452766d0684007c2cc106d44f166d2627c611fa6:usr/share/nginx/html:rw': invalid mount config for type "bind": invalid mount path: 'usr/share/nginx/html' mount path must be absolute
+
+ERROR: for wordpress  Cannot create container for service wordpress: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda09e530096b7452766d0684007c2cc106d44f166d2627c611fa6:usr/share/wordpress/html:rw': invalid mount config for type "bind": invalid mount path: 'usr/share/wordpress/html' mount path must be absolute
+
+ERROR: for mariadb  Cannot create container for service mariadb: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda09e530096b7452766d0684007c2cc106d44f166d2627c611fa6:usr/share/mariadb/html:rw': invalid mount config for type "bind": invalid mount path: 'usr/share/mariadb/html' mount path must be absolute
+
+ERROR: for nginx  Cannot create container for service nginx: invalid volume specification: '/run/desktop/mnt/host/wsl/docker-desktop-bind-mounts/Ubuntu/4563e88da4bda09e530096b7452766d0684007c2cc106d44f166d2627c611fa6:usr/share/nginx/html:rw': invalid mount config for type "bind": invalid mount path: 'usr/share/nginx/html' mount path must be absolute
+ERROR: Encountered errors while bringing up the project.
