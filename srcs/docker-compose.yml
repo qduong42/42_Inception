@@ -1,28 +1,37 @@
-version: '3.7'
+version: '3.9'
 
 services:
   nginx:
-    image: nginx:latest #can not load images nginx:latest
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: requirements/nginx/dockerfile
+    # depends_on:
+    # -wordpress
     ports:
-      - 443:443 #443:443
-    # volumes:
-    #   - ./html:usr/share/nginx/html
+      - "443:443"
+    volumes:
+      - ./requirements/nginx/conf/:/etc/nginx/http.d/
+      - ./requirements/nginx/tools:/etc/nginx/ssl/
+      # - /home/${USER}/simple_docker_nginx_html/public/html:/var/www/
+    restart: unless-stopped
+    # image: nginx:latest #can not load images nginx:latest
 
-  mariadb:
-    image: mariadb:latest
-    ports:
-      - 3306:3306
-    # environment:
-    #   - MYSQL_ROOT_PASSWORD=$(MYSQL_ROOT_PASSWORD)
-    env_file:
-      - .env
-    # volumes:
-    #   - ./html:usr/share/mariadb/html
+  # mariadb:
+  #   image: mariadb:latest
+  #   ports:
+  #     - 3306:3306
+  #   # environment:
+  #   #   - MYSQL_ROOT_PASSWORD=$(MYSQL_ROOT_PASSWORD)
+  #   env_file:
+  #     - .env
+  #   # volumes:
+  #   #   - ./html:usr/share/mariadb/html
 
-  wordpress:
-    image: wordpress:latest
-    ports:
-      - 9000:9000
-    # volumes:
-    #   - ./html:usr/share/wordpress/html
+  # wordpress:
+  #   image: wordpress:latest
+  #   ports:
+  #     - 9000:9000
+  #   # volumes:
+  #   #   - ./html:usr/share/wordpress/html
 
