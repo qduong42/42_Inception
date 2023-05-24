@@ -1,7 +1,7 @@
 # Use port 443
 # Use TLSv1.2 or TLSv1.3
 
-FROM alpine:3.16
+FROM alpine:3.17.3
 
 RUN apk update && apk upgrade && apk add --no-cache nginx
 
