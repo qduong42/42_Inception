@@ -18,3 +18,6 @@ map
 Example:
 	- list1
 	- list2
+
+Commands: netstat -ano
+	- show all ports used and listening
