@@ -40,8 +40,8 @@ echo "Wordpress: creating users..."
 # Password for the admin user. The default is a randomly generated string.
 #	--admin_email=<email>
 # Administrator's email address.
-wp core install --allow-root --url=qduong.42.fr --title=inception --admin_user=chief \
-				--admin_password=chief222 --admin_email=creator@42.fr;
+# wp core install --allow-root --url=qduong.42.fr --title=inception --admin_user=chief \
+# 				--admin_password=chief222 --admin_email=creator@42.fr;
 echo "Admin user has been created!"
 # Creates a new user
 #	<user-login>
