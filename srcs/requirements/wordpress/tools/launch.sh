@@ -55,7 +55,7 @@ echo "Admin user has been created!"
 # User password. Default: randomly generated
 wp user create --allow-root user user@42.fr --role=contributor --user_pass=user222;
 # Theme for WordPress
-# wp theme install inspiro --activate --allow-root
+wp theme install OceanWP --activate --allow-root
 
 
 echo "Wordpress: set up!"
