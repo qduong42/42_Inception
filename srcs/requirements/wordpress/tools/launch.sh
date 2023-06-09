@@ -59,6 +59,10 @@ wp user create --allow-root user user@42.fr --role=contributor --user_pass=user2
 
 
 echo "Wordpress: set up!"
+
+wp plugin install disable-comments –activate;
+
+echo "wp disable comment activated!"
 else
 echo "Wordpress: is already set up!"
 fi
