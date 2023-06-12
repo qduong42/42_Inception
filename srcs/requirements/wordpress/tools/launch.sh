@@ -40,8 +40,9 @@ echo "Wordpress: creating users..."
 # Password for the admin user. The default is a randomly generated string.
 #	--admin_email=<email>
 # Administrator's email address.
-wp core install --allow-root --url=qduong.42.fr --title=inception --admin_user=chief \
-				--admin_password=chief222 --admin_email=creator@42.fr;
+wp core install --allow-root --url=$WORDPRESS_URL --title=$WORDPRESS_TITLE --admin_user=$WORDPRESS_ADMIN_LOGIN \
+				--admin_password=$WORDPRESS_ADMIN_PASSWORD \
+				--admin_email=$WORDPRESS_ADMIN_EMAIL;
 echo "Admin user has been created!"
 # Creates a new user
 #	<user-login>
@@ -53,9 +54,9 @@ echo "Admin user has been created!"
 # Possible values ​​include "administrator", "editor", "author", "contributor", "subscriber".
 #	[--user_pass=<password>]
 # User password. Default: randomly generated
-wp user create --allow-root user user@42.fr --role=contributor --user_pass=user222;
+wp user create --allow-root $WORDPRESS_USER_LOGIN $WORDPRESS_USER_EMAIL --role=contributor --user_pass=$WORDPRESS_USER_PASSWORD;
 # Theme for WordPress
-wp theme install oceanwp --activate --allow-root
+# wp theme install oceanwp --activate --allow-root
 
 
 echo "Wordpress: set up!"

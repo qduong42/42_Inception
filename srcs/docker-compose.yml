@@ -21,14 +21,19 @@ services:
 
   wordpress:
     container_name: wordpress
+    env_file: .env
     build:
       context: ./requirements/wordpress
       dockerfile: ./Dockerfile
-    # env_file: .env
       args:
         DB_NAME: ${DB_NAME}
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
+        WORDPRESS_URL: ${WORDPRESS_URL}
+        WORDPRESS_TITLE: ${WORDPRESS_TITLE}
+        WORDPRESS_ADMIN_LOGIN: ${WORDPRESS_ADMIN_LOGIN}
+        WORDPRESS_ADMIN_PASSWORD: ${WORDPRESS_ADMIN_PASSWORD}
+        WORDPRESS_ADMIN_EMAIL: ${WORDPRESS_ADMIN_EMAIL}
     restart: always
     volumes:
       - wp-volume:/var/www/html/wordpress
