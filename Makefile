@@ -23,11 +23,10 @@ clean: down
 # be careful! fclean  cleans all your images!
 fclean:
 	@echo "Total clean of all configurations docker\n"
+	@sudo rm -rf ~/data/*
 	@docker stop $$(docker ps -qa)
-	@docker system prune --all --force --volumes
-	@docker network prune --force
-	@docker volume prune --force
-	@sudo rm -rf ~/data/wordpress/*
-	@sudo rm -rf ~/data/mariadb/*
+	@docker rm $$(docker ps -qa)
+	@docker volume rm $$(docker volume ls -q)
+	@docker rmi -f $$(docker images -qa)
 
 .PHONY	: all build down re clean fclean
