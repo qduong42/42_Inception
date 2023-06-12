@@ -11,8 +11,6 @@ services:
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
-    ports:
-      - "3306:3306"
     networks:
       - inception
     volumes:

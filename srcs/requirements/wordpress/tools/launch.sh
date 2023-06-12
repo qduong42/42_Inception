@@ -61,7 +61,8 @@ wp user create --allow-root $WORDPRESS_USER_LOGIN $WORDPRESS_USER_EMAIL --role=c
 
 echo "Wordpress: set up!"
 
-# wp plugin install disable-comments --activate;
+wp plugin install disable-emails --activate;
+
 # wp help disable-comments settings;
 # wp disable-comments settings --remove;
 

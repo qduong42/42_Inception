@@ -17,11 +17,9 @@ RUN apk update && apk upgrade && apk add --no-cache \
 	php-openssl \
 	php-xml \
 	php-zip \
-    # php-redis \
-    wget \
-	curl \
 	php-phar \
-    unzip \
+    redis \
+	curl && \
     rm -f /var/cache/apk/* && \
 	rm -rf /etc/php81/php-fpm.d/www.conf
 COPY ./conf/www.conf /etc/php81/php-fpm.d/
