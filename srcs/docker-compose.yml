@@ -17,24 +17,6 @@ services:
       - db-volume:/var/lib/mysql
     restart: always
 
-  wordpress:
-    container_name: wordpress
-    env_file: .env
-    depends_on:
-      - mariadb
-    build:
-      context: ./requirements/wordpress
-      dockerfile: ./Dockerfile
-      args:
-        DB_NAME: ${DB_NAME}
-        DB_USER: ${DB_USER}
-        DB_PASS: ${DB_PASS}
-    networks:
-      - inception
-    volumes:
-      - wp-volume:/var/www/html/wordpress
-    restart: always
-
   nginx:
     container_name: nginx
     depends_on:
@@ -53,16 +35,74 @@ services:
       # - ./requirements/nginx/tools:/etc/nginx/ssl/
     restart: always
 
-    ####### STATIC WEBSITE#######
-  html:
-    container_name: html
+  wordpress:
+    container_name: wordpress
+    env_file: .env
+    depends_on:
+      - mariadb
     build:
-      context: ./requirements/bonus
-      dockerfile: ./html/Dockerfile
-    ports:
-      - "3000:3000"
+      context: ./requirements/wordpress
+      dockerfile: ./Dockerfile
+      args:
+        DB_NAME: ${DB_NAME}
+        DB_USER: ${DB_USER}
+        DB_PASS: ${DB_PASS}
     networks:
       - inception
+    volumes:
+      - wp-volume:/var/www/html/wordpress
+    restart: always
+
+    ####### STATIC WEBSITE#######
+  # html:
+  #   container_name: html
+  #   build:
+  #     context: ./requirements/bonus
+  #     dockerfile: ./html/Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - inception
+
+  # redis:
+  #   container_name: redis
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/redis/Dockerfile
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - inception
+  #   restart: always
+
+  # vsftpd:
+  #   container_name: vsftpd
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/vsftpd/Dockerfile
+  #     args:
+  #       FTP_USR: ${FTP_USR}
+  #       FTP_PWD: ${FTP_PWD}
+  #   ports:
+  #     - "21:21"
+  #   volumes:
+  #     - wp-volume:/var/www/
+  #   networks:
+  #    - inception
+  #   restart: always
+
+  # adminer:
+  #   build:
+  #     context: .
+  #     dockerfile: requirements/bonus/adminer/Dockerfile
+  #   container_name: adminer
+  #   depends_on:
+  #     - mariadb
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #    - inception
+  #   restart: always
 
 volumes:
   wp-volume:

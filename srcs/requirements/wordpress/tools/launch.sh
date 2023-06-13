@@ -9,7 +9,7 @@ chmod -R 775 /var/www/html/wordpress/;
 # The following example will change the owner of all files and
 # subdirectories in the /var/www/html/wordpress directory with a new owner and group named www-data :
 adduser -S -G www-data www-data;
-chown www-data:www-data /var/www/html/;
+chown -R www-data:www-data /var/www/html/;
 chown -R www-data:www-data /var/www/html/wordpress/;
 mkdir -p /run/php/;
 touch /run/php/php-fpm81.pid;
@@ -64,6 +64,7 @@ wp theme install twentytwentytwo --activate --allow-root
 echo "Wordpress: set up!"
 
 wp plugin install disable-emails --activate;
+wp plugin install wp-redis --activate;
 
 # wp help disable-comments settings;
 # wp disable-comments settings --remove;
