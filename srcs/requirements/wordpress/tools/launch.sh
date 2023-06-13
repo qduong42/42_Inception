@@ -1,5 +1,6 @@
 #!/bin/bash
 
+if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
 # Replace all occurrences of a string in a file by overwriting the file (i.e. in place):
 #	already done manually, keeping it in just in case
 # -R recursively change permissions for directories and their contents
@@ -15,7 +16,6 @@ touch /run/php/php-fpm81.pid;
 # After checking the requirements, download the wp-cli.phar file using wget or curl:
 # then, make it executable and move it to PATH
 # Downloads and extracts the main WordPress files
-if [ ! -f /var/www/html/wordpress/wp-config.php ]; then
 echo "Wordpress: setting up..."
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar;
 echo $(php wp-cli.phar --info --allow-root)

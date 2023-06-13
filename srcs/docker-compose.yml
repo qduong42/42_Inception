@@ -31,8 +31,6 @@ services:
       - inception
     volumes:
       - wp-volume:/var/www/html/wordpress
-      # - ./requirements/nginx/conf/:/etc/nginx/http.d/
-      # - ./requirements/nginx/tools:/etc/nginx/ssl/
     restart: always
 
   wordpress:
