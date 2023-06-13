@@ -4,11 +4,13 @@
 #	already done manually, keeping it in just in case
 # -R recursively change permissions for directories and their contents
 mkdir -p /var/www/html/wordpress;
-chmod -R 775 /var/www/html/wordpress;
+chmod 775 /var/www/html/;
+chmod -R 775 /var/www/html/wordpress/;
 # The following example will change the owner of all files and
 # subdirectories in the /var/www/html/wordpress directory with a new owner and group named www-data :
 adduser -S -G www-data www-data;
-chown -R www-data:www-data /var/www/html/wordpress;
+chown www-data:www-data /var/www/html/;
+chown -R www-data:www-data /var/www/html/wordpress/;
 mkdir -p /run/php/;
 touch /run/php/php-fpm81.pid;
 
@@ -56,7 +58,7 @@ echo "Admin user has been created!"
 # User password. Default: randomly generated
 wp user create --allow-root $WORDPRESS_USER_LOGIN $WORDPRESS_USER_EMAIL --role=contributor --user_pass=$WORDPRESS_USER_PASSWORD;
 # Theme for WordPress
-# wp theme install oceanwp --activate --allow-root
+wp theme install twentytwentytwo --activate --allow-root
 
 
 echo "Wordpress: set up!"
