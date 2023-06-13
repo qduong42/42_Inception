@@ -20,6 +20,8 @@ services:
   wordpress:
     container_name: wordpress
     env_file: .env
+    depends_on:
+      - mariadb
     build:
       context: ./requirements/wordpress
       dockerfile: ./Dockerfile
@@ -27,30 +29,40 @@ services:
         DB_NAME: ${DB_NAME}
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
-    restart: always
-    volumes:
-      - wp-volume:/var/www/html/wordpress
     networks:
       - inception
-    depends_on:
-      - mariadb
+    volumes:
+      - wp-volume:/var/www/html/wordpress
+    restart: always
+
   nginx:
-    build:
-      context: .
-      dockerfile: requirements/nginx/Dockerfile
     container_name: nginx
     depends_on:
       - wordpress
       - mariadb
+    build:
+      context: .
+      dockerfile: requirements/nginx/Dockerfile
     ports:
       - "443:443"
     networks:
       - inception
     volumes:
-      - ./requirements/nginx/conf/:/etc/nginx/http.d/
-      - ./requirements/nginx/tools:/etc/nginx/ssl/
       - wp-volume:/var/www/html/wordpress
+      # - ./requirements/nginx/conf/:/etc/nginx/http.d/
+      # - ./requirements/nginx/tools:/etc/nginx/ssl/
     restart: always
+
+    ####### STATIC WEBSITE#######
+  html:
+    container_name: html
+    build:
+      context: ./requirements/bonus
+      dockerfile: ./html/Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - inception
 
 volumes:
   wp-volume:

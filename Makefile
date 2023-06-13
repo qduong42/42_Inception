@@ -27,6 +27,10 @@ fclean:
 	@docker stop $$(docker ps -qa)
 	@docker rm $$(docker ps -qa)
 	@docker volume rm $$(docker volume ls -q)
-	@docker rmi -f $$(docker images -qa)
+	@for image in $$(docker images -qa); do \
+		if docker image inspect -f '{{.Id}} {{.Parent}}' $$image | grep -q -E '^$(image)'; then \
+			docker rmi -f $$image; \
+		fi; \
+	done
 
 .PHONY	: all build down re clean fclean
