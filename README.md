@@ -25,7 +25,7 @@ Those versions are the ones used during development.
 3. This project includes some secret files to show a functional project right off the bat.
    - Secrets are in srcs/requirements/tools: x.key and x.crt and in srcs/.env
    - REPLACE with your own .env and .key and .crt and add them to .gitignore or use git secret.
-   - ENV Variables are used to ensure you can change secrets as you want.
+   - ENV Variables are used in Dockerfiles and docker-compose.yml file to ensure you can change secrets as you want.
 
 ### Running the program
 
