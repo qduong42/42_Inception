@@ -22,6 +22,11 @@ Those versions are the ones used during development.
 
         cd 42_Inception
         make
+3. This project includes some secret files to show a functional project right off the bat.
+   - Secrets are in srcs/requirements/tools: x.key and x.crt and in srcs/.env
+   - REPLACE with your own .env and .key and .crt and add them to .gitignore or use git secret.
+   - ENV Variables are used to ensure you can change secrets as you want.
+4. Add chosen WORDPRESS_URL to /etc/hosts under 127.0.0.1
 
 ### Running the program
 
