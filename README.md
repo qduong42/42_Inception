@@ -9,7 +9,7 @@ Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
 ### Requirements
 The only requirements are:
 - GNU make (v3.81)
-- Docker (refer to [official documentation](https://docs.docker.com/engine/install/) for your system. (Docker Compose version 3.7)
+- Docker (refer to [official documentation](https://docs.docker.com/engine/install/) for your system. (Docker Compose version 3)
 
 Those versions are the ones used during development.
 
@@ -26,10 +26,9 @@ Those versions are the ones used during development.
    - Secrets are in srcs/requirements/tools: x.key and x.crt and in srcs/.env
    - REPLACE with your own .env and .key and .crt and add them to .gitignore or use git secret.
    - ENV Variables are used to ensure you can change secrets as you want.
-4. Add chosen WORDPRESS_URL to /etc/hosts under 127.0.0.1
 
 ### Running the program
 
-
+navigate to https://localhost:443 or https://127.0.0.1:443. You may get a warning, as the site uses a self signed https certificate.
 
 ## Details about the project:
