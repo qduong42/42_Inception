@@ -17,13 +17,13 @@ re:
 clean: down
 	@echo "Cleaning configuration ${name}...\n"
 	@docker system prune -a
-	@sudo rm -rf ~/data/wordpress/*
-	@sudo rm -rf ~/data/mariadb/*
+	@rm -rf $(PWD)/data/wordpress/*
+	@rm -rf $(PWD)/data/mariadb/*
 
 # be careful! fclean  cleans all your images!
 fclean:
 	@echo "Total clean of all configurations docker\n"
-	@sudo rm -rf ~/data/*
+	@rm -rf $(PWD)/data/*
 	@docker stop $$(docker ps -qa)
 	@docker rm $$(docker ps -qa)
 	@docker volume rm $$(docker volume ls -q)
