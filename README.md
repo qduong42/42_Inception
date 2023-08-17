@@ -29,6 +29,19 @@ Those versions are the ones used during development.
 
 ### Running the program
 
-navigate to https://localhost:443 or https://127.0.0.1:443. You may get a warning, as the site uses a self signed https certificate.
+navigate to https://localhost:443 or https://127.0.0.1:443 You may get a warning, as the site uses a self signed https certificate.
 
+This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login to the wp user or admin specified in the .env
+
+### Services:
+- adminer: Adminer is a graphical full-featured database management tool. You can interact with the database through the UI rather than through SQL Commands.
+  - Navigate to `127.0.0.1:8080`
+  - `server: mariadb`
+  - `username & password => DB_USER and DB_PASS in .env`
+  - `database: wordpress`
+- static html website: simple static html website part of the bonus of the project
+  - Navigate to `127.0.0.1:3000`
+- vsftpd: FTP(File Transfer Protocol) server to send files
+  - Download and use a FTP client of your choice. Filezilla is a common one.
 ## Details about the project:
+
