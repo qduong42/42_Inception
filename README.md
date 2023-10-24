@@ -2,7 +2,12 @@
 
 ## Purpose
 
-Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
+Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg. We need to create Docker Images from the base OS image for a LEMP (Linux Nginx MariaDB PHP) Stack.
+I learned to configure docker-compose .yml files including docker volumes, networks. I also configured individual service containers using ENTRYPOINT/Runtime  scripts, from the base Alpine light OS image. A full list of configured services are listed below.
+
+## Details about the project:
+
+One of the challenges in this project is the fact that we need to build our docker images from scratch, using only FROM:alpine:3.17 as a base image. We learned to layer our commands, install the necesssary dependencies for the services, 
 
 ## Installation & Usage
 
@@ -43,5 +48,5 @@ This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login t
   - Navigate to `127.0.0.1:3000`
 - vsftpd: FTP(File Transfer Protocol) server to send files
   - Download and use a FTP client of your choice. Filezilla is a common one.
-## Details about the project:
+ 
 
