@@ -9,7 +9,8 @@ Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
 - Docker networks
 - Docker volumes
 - Microservices architecture
-Details about the project below.
+
+More Details about the project below.
 
 ## Installation & Usage
 
