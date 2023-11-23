@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
+Inception is a project in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
 
 ## Key concepts
 - Containerisation
