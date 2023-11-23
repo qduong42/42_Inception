@@ -43,5 +43,4 @@ This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login t
   - Navigate to `127.0.0.1:3000`
 - vsftpd: FTP(File Transfer Protocol) server to send files
   - Download and use a FTP client of your choice. Filezilla is a common one.
-## Details about the project:
 
