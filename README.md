@@ -40,7 +40,7 @@ Those versions are the ones used during development.
 
 navigate to https://localhost:443 or https://127.0.0.1:443 You may get a warning, as the site uses a self signed https certificate.
 
-This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login to the wp user or admin specified in the .env
+This is the main wordpress page. You can go to https://127.0.0.1/wp-login.php to login to the wp user or admin specified in the .env
 
 ### Services:
 - mariadb MySQL database for persistent of wordpress blog, websites, user/admin accounts, comments
