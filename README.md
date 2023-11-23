@@ -43,6 +43,9 @@ navigate to https://localhost:443 or https://127.0.0.1:443 You may get a warning
 This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login to the wp user or admin specified in the .env
 
 ### Services:
+- mariadb MySQL database for persistent of wordpress blog, websites, user/admin accounts, comments
+- nginx server to self host in localhost.
+- php in the form of wordpress website
 - adminer: Adminer is a graphical full-featured database management tool. You can interact with the database through the UI rather than through SQL Commands.
   - Navigate to `127.0.0.1:8080`
   - `server: mariadb`
@@ -55,4 +58,4 @@ This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login t
 
 ## Details about the project:
 
-This project is about creating docker images from scratch(from the base linux light-weight OS:Alpine) for each microservices used, as well as building a LEMP (Linux, Nginx, MySQL, PHP) application stack in Docker. We use Dockerfile for building the individual docker images as well as docker-compose.yml file to build the whole stack. The LEMP stack has persistent memory through a bind mount with your local system through MySQL databases using docker volumes.
+This project is about creating docker images from scratch(from the base linux light-weight OS:Alpine) for each microservices used, as well as building a LEMP (Linux, Nginx, MySQL, PHP) application stack in Docker. We use Dockerfile for building the individual docker images as well as docker-compose.yml file to build the whole stack. The LEMP stack has persistent memory through a bind mount with your local system through MySQL databases using docker volumes. Additionally, wordpress is ready to use, you do not need to go through installation stages of creating an admin user and a normal user. They are pre-created through setup. 
