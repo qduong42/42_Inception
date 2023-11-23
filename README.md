@@ -10,7 +10,8 @@ Inception is in the 2nd last ring of the Core Curriculum(Studies) @42Wolfsburg.
 - Docker volumes
 - Microservices architecture
 
-More Details about the project below.
+More Details about the project [click here!](##-Details-about-the-project:)
+
 
 ## Installation & Usage
 
@@ -52,6 +53,6 @@ This is the main wordpress page. You can go to 127.0.0.1/wp-login.php to login t
 - vsftpd: FTP(File Transfer Protocol) server to send files
   - Download and use a FTP client of your choice. Filezilla is a common one.
 
-### Details about the project:
+## Details about the project:
 
 This project is about creating docker images from scratch(from the base linux light-weight OS:Alpine) for each microservices used, as well as building a LEMP (Linux, Nginx, MySQL, PHP) application stack in Docker. We use Dockerfile for building the individual docker images as well as docker-compose.yml file to build the whole stack. The LEMP stack has persistent memory through a bind mount with your local system through MySQL databases using docker volumes.
