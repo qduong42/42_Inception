@@ -27,11 +27,12 @@ Those versions are the ones used during development.
 1. Download/Clone this repo
 
         git clone https://github.com/qduong42/42_Inception
-2. `cd` into the 42_Inception directory and run `make`
+2. Start Docker
+3. `cd` into the 42_Inception directory and run `make`
 
         cd 42_Inception
         make
-3. This project includes some secret files to show a functional project right off the bat.
+4. This project includes some secret files to show a functional project right off the bat.
    - Secrets are in srcs/requirements/tools: x.key and x.crt and in srcs/.env
    - REPLACE with your own .env and .key and .crt and add them to .gitignore or use git secret.
    - ENV Variables are used in Dockerfiles and docker-compose.yml file to ensure you can change secrets as you want.
