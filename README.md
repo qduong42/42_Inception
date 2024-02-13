@@ -49,6 +49,7 @@ This is the main wordpress page. You can go to https://127.0.0.1/wp-login.php to
 - php in the form of wordpress website
 - adminer: Adminer is a graphical full-featured database management tool. You can interact with the database through the UI rather than through SQL Commands.
   - Navigate to `127.0.0.1:8080`
+  - `system:MYSQL`
   - `server: mariadb`
   - `username & password => DB_USER and DB_PASS in .env`
   - `database: wordpress`
